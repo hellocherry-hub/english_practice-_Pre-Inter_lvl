@@ -392,8 +392,8 @@
     fetch(WEBHOOK_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      
+      body: new URLSearchParams(payload)
     }).then(function () {
       setStatus("Sent. Thank you! Your teacher will check your answers in the next lesson.");
       try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
