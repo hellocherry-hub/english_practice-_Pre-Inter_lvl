@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Practice: Units 1–4</title>
+<style>
+  :root {
+    --paper: #F6F3EC;
+    --ink: #22252A;
+    --muted: #5F6470;
+    --teal: #1D6F6A;
+    --rule: #D9D4C7;
+    --tint: #E7F0EE;
+    --field: #FFFFFF;
+    --warn: #8A3B12;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 20px 120px;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0;
+  }
+  h1 { font-size: 2.1rem; margin-bottom: 8px; }
+  h2 {
+    font-size: 1.45rem;
+    margin: 48px 0 6px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .intro { color: var(--muted); margin: 0 0 8px; }
+  .note {
+    background: var(--tint);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 18px 0;
+    font-size: 0.95rem;
+  }
+  .field-block { margin: 20px 0 8px; }
+  .field-block label { display: block; font-weight: 600; }
+  ol.items { padding-left: 0; list-style: none; counter-reset: q; }
+  ol.items > li {
+    counter-increment: q;
+    margin: 0 0 18px;
+    padding-left: 2.2em;
+    position: relative;
+  }
+  ol.items > li::before {
+    content: counter(q) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .word-box { font-weight: 600; color: var(--teal); margin: 4px 0 14px; }
+  .story { margin: 0 0 14px; }
+  input[type="text"], textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    background: var(--field);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 6px;
+  }
+  textarea { min-height: 84px; resize: vertical; }
+  input[type="text"]:focus, textarea:focus {
+    outline: 2px solid var(--teal);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .gap-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+  .gap-row label { min-width: 2.2em; color: var(--teal); font-weight: 600; }
+  .gap-row input { margin-top: 0; }
+  .gap-row input[type="text"] { max-width: 320px; }
+  .actions {
+    position: sticky;
+    bottom: 0;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    margin: 48px -20px 0;
+    padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  button {
+    font: inherit;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 11px 20px;
+    cursor: pointer;
+    border: 1px solid var(--teal);
+    background: var(--teal);
+    color: #fff;
+  }
+  button:disabled { opacity: 0.6; cursor: default; }
+  button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  #status { color: var(--muted); font-size: 0.95rem; }
+  #status.error { color: var(--warn); }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>English Practice</h1>
+  <p class="intro">Units 1–4 · Answer the questions, then press <strong>Submit my answers</strong> at the bottom. Your answers go straight to your teacher.</p>
+
+  <div class="field-block">
+    <label for="studentName">Your name</label>
+    <input type="text" id="studentName" autocomplete="name" placeholder="e.g. Somchai">
+  </div>
+
+  <!-- ============ PART A ============ -->
+  <h2>A. Sentence transformation</h2>
+  <p class="intro">Rewrite each sentence so it means the same as the first one. Use the word in capitals. Do not change the word. Use 2–6 words, including the word in capitals.</p>
+  <div id="partA"></div>
+
+  <!-- ============ PART B ============ -->
+  <h2>B. Gap-fill story 1: Hiro's new job</h2>
+  <p class="intro">Choose the correct word from the box for each gap. Write one word or phrase for each gap.</p>
+  <p class="word-box">got · boss · were · deal · usually · goes · once in a while · is going to · should · never</p>
+  <div class="story">
+    <p>Hiro (1) ___ a job at a small publishing company last year. His (2) ___ was friendly, and his colleagues (3) ___ very helpful. Hiro has to (4) ___ with many customers, so he has learned to be patient. He (5) ___ works late on Mondays, but he is hardly ever tired on Tuesdays. In the evenings he (6) ___ to the gym, but (7) ___ he stays home to read. Next month he (8) ___ take a trip to Vietnam with his sister.</p>
+  </div>
+  <div id="partB"></div>
+
+  <h2>C. Gap-fill story 2: Lina's big decision</h2>
+  <p class="intro">Choose the correct word or phrase from the box for each gap. Write one word or phrase for each gap.</p>
+  <p class="word-box">made · decided · wanted · never · had to · must · mustn't · going to · gave · should</p>
+  <div class="story">
+    <p>Last year Lina (1) ___ a big decision. She (2) ___ to quit her job and open a café. Her parents thought it was risky, but she (3) ___ to try. "I've (4) ___ been so excited," she says. Before she opened, she (5) ___ learn about food safety. "You (6) ___ study hard," she laughs, "and you (7) ___ forget the rules!" Now she is (8) ___ open a second café next summer.</p>
+  </div>
+  <div id="partC"></div>
+
+  <!-- ============ PART D ============ -->
+  <h2>D. Error correction</h2>
+  <p class="intro">Each sentence has one mistake. Find it and write the correct sentence.</p>
+  <div id="partD"></div>
+
+  <!-- ============ PART E ============ -->
+  <h2>E. Crossword-style clues</h2>
+  <p class="intro">Write one word for each clue. The number in brackets is the number of letters.</p>
+  <div id="partE"></div>
+
+  <!-- ============ PART F ============ -->
+  <h2>F. Odd one out</h2>
+  <p class="intro">In each row, three words belong together. Write the odd word and say why in a few words.</p>
+  <div id="partF"></div>
+
+  <!-- ============ PART G ============ -->
+  <h2>G. Questions about you</h2>
+  <p class="intro">Answer in full sentences. Aim for 2–4 sentences each.</p>
+  <div id="partG"></div>
+
+  <!-- ============ PART H ============ -->
+  <h2>H. Postcard</h2>
+  <p class="intro">Write a postcard of 50–70 words to a friend.</p>
+  <div class="note">
+    Imagine you are on holiday in a city you like. In your postcard:
+    <br>• say where you are and what you did yesterday (past simple)
+    <br>• say one thing you have never done (<em>never</em> + present perfect)
+    <br>• say one plan for tomorrow (<em>going to</em> or the present continuous)
+    <br>• invite your friend to visit (<em>Would you like to…?</em>)
+    <br>• use at least two linking words (<em>and, but, so, because</em>)
+  </div>
+  <div id="partH"></div>
+
+  <div class="actions">
+    <button id="submitBtn" type="button">Submit my answers</button>
+    <span id="status" role="status" aria-live="polite"></span>
+  </div>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  // ============================================================
+  // TEACHER: paste your Zapier "Catch Hook" URL between the quotes.
+  // It looks like: https://hooks.zapier.com/hooks/catch/1234567/abcdef/
+  // ============================================================
+  var WEBHOOK_URL = "PASTE_YOUR_ZAPIER_WEBHOOK_URL_HERE";
+
+  var STORAGE_KEY = "english-practice-u1-4-draft";
+
+  var sections = [
+    {
+      id: "A", items: [
+        { prompt: "Ana and Ken were friends from the moment they met. (GOT ON)", type: "short" },
+        { prompt: "Ravi asked Jenny to marry him on a mountain. (PROPOSED)", type: "short" },
+        { prompt: "You started your job in March. (WHEN)", type: "short" },
+        { prompt: "Sam was single before he met Paula. (DIDN'T HAVE)", type: "short" },
+        { prompt: "Our manager never answers emails after six. (HARDLY)", type: "short" },
+        { prompt: "Firefighters often put their lives in danger. (RISK)", type: "short" },
+        { prompt: "I don't like working outdoors in winter. (CAN'T STAND)", type: "short" },
+        { prompt: "I intend to see the new exhibition on Sunday. (GOING)", type: "short" },
+        { prompt: "Could you buy me a ticket for the play? (GET)", type: "short" },
+        { prompt: "Is it possible to talk to the manager, please? (SPEAK)", type: "short" },
+        { prompt: "Did you ever visit Italy? (HAVE)", type: "short" },
+        { prompt: "I haven't once tried sushi. (NEVER)", type: "short" },
+        { prompt: "It is necessary to bring a passport. (HAVE)", type: "short" },
+        { prompt: "It is forbidden to smoke here. (MUSTN'T)", type: "short" },
+        { prompt: "I advise you to call the doctor. (SHOULD)", type: "short" }
+      ]
+    },
+    { id: "B", gaps: 8 },
+    { id: "C", gaps: 8 },
+    {
+      id: "D", items: [
+        { prompt: "I have never eat sushi.", type: "short" },
+        { prompt: "Have you ever went to Japan?", type: "short" },
+        { prompt: "She must to finish the report by Friday.", type: "short" },
+        { prompt: "You mustn't to be late for the exam.", type: "short" },
+        { prompt: "I'm going to meeting my friend tomorrow.", type: "short" },
+        { prompt: "He proposed her in a restaurant.", type: "short" },
+        { prompt: "We got married in last year.", type: "short" },
+        { prompt: "Does your boss usually gives you a bonus?", type: "short" },
+        { prompt: "I can to swim very well.", type: "short" },
+        { prompt: "Sorry, can you speaking more slowly?", type: "short" }
+      ]
+    },
+    {
+      id: "E", items: [
+        { prompt: "A person who buys things from a shop (8)", type: "short" },
+        { prompt: "Extra money given to a worker for good work (5)", type: "short" },
+        { prompt: "The journey you make to work every day (7)", type: "short" },
+        { prompt: "The person who is in charge of a company's staff (4)", type: "short" },
+        { prompt: "A building where people go to see a play (7)", type: "short" },
+        { prompt: "To stop someone while they are speaking (9)", type: "short" }
+      ]
+    },
+    {
+      id: "F", items: [
+        { prompt: "proposed · engaged · married · employee", type: "short" },
+        { prompt: "go shopping · spend time · play sport · make a speech", type: "short" },
+        { prompt: "employee · customer · boss · dangerous", type: "short" },
+        { prompt: "salary · bonus · commute · office", type: "short" },
+        { prompt: "countryside · nature trail · waterfront · shopping mall", type: "short" },
+        { prompt: "speak up · slow down · repeat that · cancel", type: "short" },
+        { prompt: "should · must · can · going", type: "short" },
+        { prompt: "wheel · electricity · refrigerator · language", type: "short" }
+      ]
+    },
+    {
+      id: "G", items: [
+        { prompt: "What makes you happy? What do you do to relax at weekends?", type: "long" },
+        { prompt: "How did you meet your best friend? When did you last see them?", type: "long" },
+        { prompt: "What is your job or studies like? Which part do you enjoy most?", type: "long" },
+        { prompt: "Have you ever made a speech in public? If so, when? If not, would you like to?", type: "long" },
+        { prompt: "How often do you go out for a meal or a drink? Where do you like to go?", type: "long" },
+        { prompt: "How do you usually make a phone call or book a table in English?", type: "long" },
+        { prompt: "What is one piece of advice you have received about learning English?", type: "long" },
+        { prompt: "Which is more important to you: a good salary or free time? Why?", type: "long" },
+        { prompt: "Would you like to live in another country for a year? Why or why not?", type: "long" },
+        { prompt: "What is an invention you think is very important? Why?", type: "long" }
+      ]
+    },
+    {
+      id: "H", items: [
+        { prompt: "Write your postcard here (50–70 words).", type: "long" }
+      ]
+    }
+  ];
+
+  var containerFor = {
+    A: "partA", B: "partB", C: "partC", D: "partD",
+    E: "partE", F: "partF", G: "partG", H: "partH"
+  };
+
+  var answers = {};
+  try {
+    answers = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};
+  } catch (e) {
+    answers = {};
+  }
+
+  function saveDraft() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(answers)); } catch (e) { /* drafts unavailable */ }
+  }
+
+  function makeField(key, type) {
+    var el = document.createElement(type === "long" ? "textarea" : "input");
+    if (type !== "long") el.type = "text";
+    el.id = key;
+    el.value = answers[key] || "";
+    el.setAttribute("autocomplete", "off");
+    el.addEventListener("input", function () {
+      answers[key] = el.value;
+      saveDraft();
+    });
+    return el;
+  }
+
+  function render() {
+    sections.forEach(function (sec) {
+      var container = document.getElementById(containerFor[sec.id]);
+      if (!container) return;
+
+      if (sec.items) {
+        var ol = document.createElement("ol");
+        ol.className = "items";
+        sec.items.forEach(function (item, i) {
+          var li = document.createElement("li");
+          var p = document.createElement("div");
+          p.textContent = item.prompt;
+          li.appendChild(p);
+          li.appendChild(makeField(sec.id + "-" + (i + 1), item.type));
+          ol.appendChild(li);
+        });
+        container.appendChild(ol);
+      } else if (sec.gaps) {
+        for (var g = 1; g <= sec.gaps; g++) {
+          var row = document.createElement("div");
+          row.className = "gap-row";
+          var lab = document.createElement("label");
+          lab.setAttribute("for", sec.id + "-" + g);
+          lab.textContent = g + ".";
+          row.appendChild(lab);
+          row.appendChild(makeField(sec.id + "-" + g, "short"));
+          container.appendChild(row);
+        }
+      }
+    });
+  }
+
+  // Build one flat object so Zapier can map each answer to a spreadsheet column.
+  // Keys look like A_1, A_2, ... B_1 ... H_1
+  function buildPayload() {
+    var payload = {
+      student_name: (document.getElementById("studentName").value || "").trim(),
+      submitted_at: new Date().toISOString(),
+      units: "1-4"
+    };
+    sections.forEach(function (sec) {
+      var count = sec.items ? sec.items.length : sec.gaps;
+      for (var n = 1; n <= count; n++) {
+        var key = sec.id + "-" + n;
+        payload[sec.id + "_" + n] = (answers[key] || "").trim();
+      }
+    });
+    return payload;
+  }
+
+  var submitBtn = document.getElementById("submitBtn");
+  var status = document.getElementById("status");
+
+  function setStatus(msg, isError) {
+    status.textContent = msg;
+    status.className = isError ? "error" : "";
+  }
+
+  submitBtn.addEventListener("click", function () {
+    var payload = buildPayload();
+
+    if (!payload.student_name) {
+      setStatus("Please write your name first.", true);
+      document.getElementById("studentName").focus();
+      return;
+    }
+    if (WEBHOOK_URL.indexOf("PASTE_") === 0) {
+      setStatus("This page is not connected yet. Please tell your teacher.", true);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    setStatus("Sending…");
+
+    // Zapier catch hooks accept a plain POST from any site.
+    // "no-cors" means the browser will not show the response, so we
+    // treat a completed request as sent.
+    fetch(WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function () {
+      setStatus("Sent. Thank you! Your teacher will check your answers in the next lesson.");
+      try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      setStatus("Could not send. Check your internet connection and press Submit again.", true);
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
